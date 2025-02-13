@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+defineProps ({item:Object})
+
+</script>
 
 <template>
   <div class="card">
@@ -9,10 +12,10 @@
         alt="12"
         class="card-img"
       />
-      <h3>Raza: pastor aleman</h3>
-      <p><strong>Género:</strong> macho / hembra</p>
-      <p><strong>Estatura:</strong> cachorro</p>
-      <p class="card-price">$1.100.000/ 1.500.000"</p>
+      <h3>Raza: {{ item.raza }}</h3>
+      <p><strong>Género:</strong> {{ item.genero }}</p>
+      <p><strong>Estatura:</strong> {{ item.estatura }}</p>
+      <p class="card-price">{{ item.precio }}</p>
       <button class="card-button">Más información</button>
     </div>
   </div>

@@ -1,14 +1,17 @@
 <script setup>
 import SingleCard from './SingleCard.vue';
 import { ref } from 'vue';
+import {database} from '../database/database'
+
+console.log(database)
+
+const items = ref(database)
+
 </script>
 
 <template>
   <div class="grid-container">
-    <SingleCard />
-
-    <SingleCard />
-    <SingleCard />
+    <SingleCard v-for="item in items" :item="item"/>
   </div>
 </template>
 
