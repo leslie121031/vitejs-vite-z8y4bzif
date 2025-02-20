@@ -31,11 +31,7 @@ header {
   padding: 15px;
   font-size: 1.5rem;
 }
-body {
-  background-color: #87CEEB; /* Azul celeste */
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+
 
 /* Estilos para el Footer */
 footer {

@@ -1,33 +1,29 @@
+<script setup>
+import SingleCard from './SingleCard.vue';
+import { ref } from 'vue';
+import {database} from '../database/database'
+
+console.log(database)
+
+const items = ref(database)
+
+</script>
+
 <template>
-  <div class="tarjetas-container">
-    <DogCard v-for="(perro, index) in perros" :key="index" :perro="perro" />
+  <div class="grid-container">
+    <SingleCard v-for="item in items" :item="item"/>
   </div>
 </template>
 
-<script>
-import DogCard from './DogCard.vue';
-
-export default {
-  components: { DogCard },
-  data() {
-    return {
-      perros: [
-        { raza: "Pug", imagen: "url_del_pug", precio: "1.100.000 - 1.500.000" },
-        { raza: "Poodle", imagen: "url_del_poodle", precio: "1.100.000 - 7.000.000" },
-        { raza: "Golden", imagen: "url_del_golden", precio: "1.400.000" },
-        // Agrega todas las razas aquí
-      ]
-    };
-  }
-};
-</script>
 
 <style scoped>
-.tarjetas-container {
+.grid-container {  /* ← Aquí estaba mal escrito como griid-container */
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  gap: 20px; /* Ajusta este valor si siguen muy juntas */
   padding: 20px;
+  justify-content: center; /* Centra las tarjetas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+
 </style>

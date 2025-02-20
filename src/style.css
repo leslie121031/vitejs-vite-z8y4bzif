@@ -10,7 +10,10 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr max-content;
+  background-color: rgb(163, 247, 247);
 }
+
+
 
 @media (prefers-color-scheme: light) {
 }
