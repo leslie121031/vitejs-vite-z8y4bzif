@@ -1,53 +1,48 @@
-<script setup>
-defineProps ({item:Object})
-
-</script>
-
 <template>
-  <div class="card">
-    <img src="" alt="" class="card-img" />
-    <div class="card-content">
-      <img
-        src="https://nfnatcane.es/blog/wp-content/uploads/2022/02/dos-cachorros-de-pastor-aleman-jugando.jpg"
-        alt="12"
-        class="card-img"
-      />
-      <h3>Raza: {{ item.raza }}</h3>
-      <p><strong>Género:</strong> {{ item.genero }}</p>
-      <p><strong>Estatura:</strong> {{ item.estatura }}</p>
-      <p class="card-price">{{ item.precio }}</p>
-      <button class="card-button">Más información</button>
+  <div class="tarjeta">
+    <img :src="perro.imagen" :alt="perro.raza">
+    <div class="contenido">
+      <h3>Raza: {{ perro.raza }}</h3>
+      <p><strong>Precio:</strong> {{ perro.precio }}</p>
+      <button>Más información</button>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    perro: Object
+  }
+};
+</script>
+
 <style scoped>
-/* Estilo de la tarjeta */
-.card {
-  width: 300px;
-  height: 360px;
-  background-color: #ff6b6b;
-  border-radius: 15px;
+.tarjeta {
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  color: #fff;
-  font-family: Arial, sans-serif;
-}
-/* Imagen dentro de la tarjeta */
-.card-img {
-  width: 100%;
-  height: auto;
-  max-height: 150px;
-  object-fit: cover;
-  border-bottom: 3px solid #fff;
 }
 
-.card-container {
-  display: flex;
-  gap: 20px;
-  justify-content: space-around;
-  padding: 0px;
-  flex-wrap: wrap;
+.tarjeta img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.contenido {
+  padding: 10px;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 </style>
